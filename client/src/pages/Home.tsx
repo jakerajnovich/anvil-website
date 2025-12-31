@@ -35,17 +35,17 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-card border border-primary/30 mb-8">
               <Shield className="w-4 h-4 text-primary" />
               <span className="text-sm font-[var(--font-mono)] text-muted-foreground uppercase tracking-wider">
-                FCC/NDAA Compliant • US Manufacturing
+                FCC/NDAA Compliant • Made in California, USA
               </span>
             </div>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[0.9] tracking-tight">
-              Domestic Propulsion<br />
-              <span className="text-primary">at Scale</span>
+              American-Made<br />
+              Propulsion <span className="text-primary">at Scale</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl font-[var(--font-body)] leading-relaxed">
-              We build US-produced motors so OEMs can ship compliant drone systems without redesigning their entire platform.
+              California-manufactured brushless motors engineered for compliance. Ship FCC/NDAA-compliant drone systems without platform redesign.
             </p>
 
             {/* Technical Specs Callout */}
@@ -81,7 +81,7 @@ export default function Home() {
             <div className="grid grid-cols-3 gap-6 mt-16 max-w-2xl">
               <div>
                 <div className="text-4xl md:text-5xl font-bold text-primary font-[var(--font-display)] mb-2">100%</div>
-                <div className="text-sm text-muted-foreground font-[var(--font-mono)] uppercase tracking-wider">US Sourced</div>
+                <div className="text-sm text-muted-foreground font-[var(--font-mono)] uppercase tracking-wider">Made in CA</div>
               </div>
               <div>
                 <div className="text-4xl md:text-5xl font-bold text-primary font-[var(--font-display)] mb-2">10K+</div>
@@ -118,15 +118,15 @@ export default function Home() {
               </p>
 
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                New authorizations for covered foreign hardware get blocked, and the industry scrambles for compliant supply. That's where we come in.
+                New authorizations for covered foreign hardware get blocked, and the industry scrambles for compliant supply. Anvil delivers American-made motors with full traceability—no supply chain uncertainty, no compliance risk.
               </p>
 
               <div className="space-y-4 mb-8">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <div className="font-semibold text-foreground mb-1">FCC/NDAA Compliant by Design</div>
-                    <div className="text-muted-foreground">Full component traceability and material provenance documentation</div>
+                    <div className="font-semibold text-foreground mb-1">100% US Manufacturing</div>
+                    <div className="text-muted-foreground">California-made with full component traceability and material provenance</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -182,16 +182,16 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-card border border-primary/30 mb-6">
                 <Factory className="w-4 h-4 text-primary" />
                 <span className="text-sm font-[var(--font-mono)] text-muted-foreground uppercase tracking-wider">
-                  Scale Manufacturing
+                  California Manufacturing
                 </span>
               </div>
 
               <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                The Moat is the <span className="text-primary">Factory</span>
+                Built in <span className="text-primary">California</span>,<br />Scaled for America
               </h2>
 
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                A motor business becomes defensible when you own the automated winding + balancing process, inline electrical testing, vibration/bearing QA, and tight statistical process control that keeps scrap low.
+                Every Anvil motor is manufactured in our California facility with 100% US-sourced materials and components. Our automated production line ensures consistent quality while meeting the scale demands of domestic drone deployment.
               </p>
 
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
