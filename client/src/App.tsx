@@ -1,24 +1,24 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch, Router as WouterRouter } from "wouter";
+import { Route, Switch, Router } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 
-// Base path for GitHub Pages deployment
-const base = import.meta.env.BASE_URL || "/";
-
-function Router() {
+// Use hash-based routing for GitHub Pages compatibility
+// This avoids issues with base paths and server-side routing
+function AppRouter() {
   return (
-    <WouterRouter base={base}>
+    <Router hook={useHashLocation}>
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/404" component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />
       </Switch>
-    </WouterRouter>
+    </Router>
   );
 }
 
@@ -29,7 +29,7 @@ function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <AppRouter />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
