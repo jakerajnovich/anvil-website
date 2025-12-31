@@ -1,8 +1,7 @@
 /*
  * Design: Industrial Brutalism - Navigation
- * - Minimal, functional header with technical precision
- * - Monospace font for navigation items
- * - Hard edges, no rounded corners
+ * - Minimal, clean header with Anduril-style logo
+ * - Simple white logo on dark background
  */
 
 import { Button } from "@/components/ui/button";
@@ -17,43 +16,42 @@ export default function Navigation() {
       <div className="container">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl font-[var(--font-display)]">A</span>
-            </div>
-            <span className="text-xl font-bold font-[var(--font-display)] tracking-tight">
-              ANVIL PROPULSION
-            </span>
+          <a href="/" className="flex items-center group">
+            <img 
+              src="/images/logo-white.png" 
+              alt="Anvil Propulsion" 
+              className="h-6 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+            />
           </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <a 
               href="#compliance" 
-              className="text-sm font-[var(--font-mono)] text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Compliance
             </a>
             <a 
               href="#manufacturing" 
-              className="text-sm font-[var(--font-mono)] text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Manufacturing
             </a>
             <a 
               href="#products" 
-              className="text-sm font-[var(--font-mono)] text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Products
             </a>
             <a 
               href="#contact" 
-              className="text-sm font-[var(--font-mono)] text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Contact
             </a>
             <Button 
-              className="bg-primary text-primary-foreground hover:bg-primary/90 font-[var(--font-mono)] uppercase tracking-wider text-sm"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm"
               style={{ borderRadius: '4px' }}
             >
               Get Started
@@ -76,34 +74,34 @@ export default function Navigation() {
             <div className="flex flex-col gap-4">
               <a 
                 href="#compliance" 
-                className="text-sm font-[var(--font-mono)] text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Compliance
               </a>
               <a 
                 href="#manufacturing" 
-                className="text-sm font-[var(--font-mono)] text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Manufacturing
               </a>
               <a 
                 href="#products" 
-                className="text-sm font-[var(--font-mono)] text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Products
               </a>
               <a 
                 href="#contact" 
-                className="text-sm font-[var(--font-mono)] text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contact
               </a>
               <Button 
-                className="bg-primary text-primary-foreground hover:bg-primary/90 font-[var(--font-mono)] uppercase tracking-wider text-sm w-full"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm w-full"
                 style={{ borderRadius: '4px' }}
               >
                 Get Started

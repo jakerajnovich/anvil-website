@@ -371,14 +371,13 @@ export default function Home() {
       <footer className="border-t border-border py-12">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl font-[var(--font-display)]">A</span>
-              </div>
-              <span className="text-lg font-bold font-[var(--font-display)] tracking-tight">
-                ANVIL PROPULSION
-              </span>
-            </div>
+            <a href="/" className="flex items-center">
+              <img 
+                src="/images/logo-white.png" 
+                alt="Anvil Propulsion" 
+                className="h-5 w-auto opacity-80"
+              />
+            </a>
 
             <div className="text-sm text-muted-foreground font-[var(--font-mono)]">
               © 2025 Anvil Propulsion. All rights reserved.
