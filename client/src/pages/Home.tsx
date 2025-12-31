@@ -21,7 +21,7 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/hero-manufacturing.png" 
+            src={`${import.meta.env.BASE_URL}images/hero-manufacturing.png`} 
             alt="Precision motor manufacturing"
             className="w-full h-full object-cover"
           />
@@ -155,7 +155,7 @@ export default function Home() {
             {/* Right: Image */}
             <div className="relative">
               <img 
-                src="/images/compliance-abstract.png" 
+                src={`${import.meta.env.BASE_URL}images/compliance-abstract.png`} 
                 alt="Regulatory compliance visualization"
                 className="w-full h-auto"
               />
@@ -171,7 +171,7 @@ export default function Home() {
             {/* Left: Image */}
             <div className="order-2 lg:order-1">
               <img 
-                src="/images/factory-floor.png" 
+                src={`${import.meta.env.BASE_URL}images/factory-floor.png`} 
                 alt="Modern American manufacturing facility"
                 className="w-full h-auto"
               />
@@ -251,7 +251,7 @@ export default function Home() {
           {/* Product Image */}
           <div className="mb-16">
             <img 
-              src="/images/motor-array.png" 
+              src={`${import.meta.env.BASE_URL}images/motor-array.png`} 
               alt="Precision motor array"
               className="w-full h-auto max-w-4xl mx-auto"
             />
@@ -302,7 +302,7 @@ export default function Home() {
           {/* Motor Closeup */}
           <div className="mt-16 max-w-2xl mx-auto">
             <img 
-              src="/images/motor-closeup.png" 
+              src={`${import.meta.env.BASE_URL}images/motor-closeup.png`} 
               alt="High-performance brushless motor closeup"
               className="w-full h-auto"
             />
@@ -373,7 +373,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <a href="/" className="flex items-center">
               <img 
-                src="/images/logo-final.png" 
+                src={`${import.meta.env.BASE_URL}images/logo-final.png`} 
                 alt="Anvil Propulsion" 
                 className="h-6 w-auto opacity-80"
               />
