@@ -26,9 +26,9 @@ export default function Navigation() {
           {/* Logo */}
           <a href="#/" className="flex items-center group">
             <img 
-              src={`${import.meta.env.BASE_URL}images/logo-final.png`} 
+              src={`${import.meta.env.BASE_URL}images/anvil-logo-nav.png`} 
               alt="Anvil Propulsion" 
-              className="h-16 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+              className="h-10 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
             />
           </a>
 
