@@ -11,45 +11,53 @@ import { useState } from "react";
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center group">
+          <a href="#/" className="flex items-center group">
             <img 
               src={`${import.meta.env.BASE_URL}images/logo-final.png`} 
               alt="Anvil Propulsion" 
-              className="h-12 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+              className="h-16 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
             />
           </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <a 
-              href="#compliance" 
+            <button 
+              onClick={() => scrollToSection('compliance')}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Compliance
-            </a>
-            <a 
-              href="#manufacturing" 
+            </button>
+            <button 
+              onClick={() => scrollToSection('manufacturing')}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Manufacturing
-            </a>
-            <a 
-              href="#products" 
+            </button>
+            <button 
+              onClick={() => scrollToSection('products')}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Products
-            </a>
-            <a 
-              href="#contact" 
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Contact
-            </a>
+            </button>
             <Button 
               className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm"
               style={{ borderRadius: '4px' }}
@@ -72,34 +80,30 @@ export default function Navigation() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
-              <a 
-                href="#compliance" 
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
+              <button 
+                onClick={() => scrollToSection('compliance')}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left"
               >
                 Compliance
-              </a>
-              <a 
-                href="#manufacturing" 
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
+              </button>
+              <button 
+                onClick={() => scrollToSection('manufacturing')}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left"
               >
                 Manufacturing
-              </a>
-              <a 
-                href="#products" 
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
+              </button>
+              <button 
+                onClick={() => scrollToSection('products')}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left"
               >
                 Products
-              </a>
-              <a 
-                href="#contact" 
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left"
               >
                 Contact
-              </a>
+              </button>
               <Button 
                 className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm w-full"
                 style={{ borderRadius: '4px' }}
