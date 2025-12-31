@@ -6,7 +6,7 @@ import { defineConfig } from "vite";
 // Production build configuration for GitHub Pages
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/anvil-website/', // Must match your GitHub repository name
+  base: '/', // Root path for custom domain (anvilpropulsion.com)
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "client/src"),
