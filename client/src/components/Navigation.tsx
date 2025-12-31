@@ -20,7 +20,7 @@ export default function Navigation() {
             <img 
               src={`${import.meta.env.BASE_URL}images/logo-final.png`} 
               alt="Anvil Propulsion" 
-              className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+              className="h-12 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
             />
           </a>
 
