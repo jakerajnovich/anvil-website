@@ -18,9 +18,9 @@ export default function Navigation() {
           {/* Logo */}
           <a href="/" className="flex items-center group">
             <img 
-              src="/images/logo-white.png" 
+              src="/images/logo-final.png" 
               alt="Anvil Propulsion" 
-              className="h-6 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+              className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
             />
           </a>
 

@@ -373,9 +373,9 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <a href="/" className="flex items-center">
               <img 
-                src="/images/logo-white.png" 
+                src="/images/logo-final.png" 
                 alt="Anvil Propulsion" 
-                className="h-5 w-auto opacity-80"
+                className="h-6 w-auto opacity-80"
               />
             </a>
 
