@@ -380,7 +380,7 @@ export default function Home() {
             </a>
 
             <div className="text-sm text-muted-foreground font-[var(--font-mono)]">
-              © 2025 Anvil Propulsion. All rights reserved.
+              © 2026 Anvil Propulsion by SectorFlow Inc. All rights reserved.
             </div>
 
             <div className="flex gap-6">
