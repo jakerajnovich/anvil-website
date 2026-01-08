@@ -9,7 +9,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
-import { ArrowRight, CheckCircle2, Factory, FileCheck, Shield, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Factory, FileCheck, Shield, Zap, Box, Layers } from "lucide-react";
 
 export default function Home() {
   return (
@@ -41,11 +41,11 @@ export default function Home() {
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[0.9] tracking-tight">
               American-Made<br />
-              Propulsion <span className="text-primary">at Scale</span>
+              Drone Components <span className="text-primary">at Scale</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl font-[var(--font-body)] leading-relaxed">
-              California-manufactured brushless motors engineered for compliance. Ship FCC/NDAA-compliant drone systems without platform redesign.
+              California-manufactured motors, propellers, airframes, and structural components engineered for compliance. Ship FCC/NDAA-compliant drone systems without platform redesign.
             </p>
 
             {/* Technical Specs Callout */}
@@ -114,11 +114,11 @@ export default function Home() {
               </h2>
 
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                On December 22, 2025, the FCC updated its Covered List to include foreign-produced UAS and "UAS critical components"—explicitly listing motors as a critical component.
+                On December 22, 2025, the FCC updated its Covered List to include foreign-produced UAS and "UAS critical components"—explicitly listing motors, propellers, airframes, and structural components as critical.
               </p>
 
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                New authorizations for covered foreign hardware get blocked, and the industry scrambles for compliant supply. Anvil delivers American-made motors with full traceability—no supply chain uncertainty, no compliance risk.
+                New authorizations for covered foreign hardware get blocked, and the industry scrambles for compliant supply. Anvil delivers American-made components with full traceability—no supply chain uncertainty, no compliance risk.
               </p>
 
               <div className="space-y-4 mb-8">
@@ -140,14 +140,14 @@ export default function Home() {
                   <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-semibold text-foreground mb-1">Drop-In Equivalents</div>
-                    <div className="text-muted-foreground">Match your current motor specs without platform redesign</div>
+                    <div className="text-muted-foreground">Match your current component specs without platform redesign</div>
                   </div>
                 </div>
               </div>
 
               <div className="tech-spec text-muted-foreground">
                 <p>
-                  <span className="text-foreground">COMPLIANCE-GRADE TRACEABILITY:</span> Every motor ships with a digital passport containing material provenance, test results, and manufacturing data.
+                  <span className="text-foreground">COMPLIANCE-GRADE TRACEABILITY:</span> Every component ships with a digital passport containing material provenance, test results, and manufacturing data.
                 </p>
               </div>
             </div>
@@ -191,11 +191,11 @@ export default function Home() {
               </h2>
 
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Every Anvil motor is manufactured in our California facility with 100% US-sourced materials and components. Our automated production line ensures consistent quality while meeting the scale demands of domestic drone deployment.
+                Every Anvil component is manufactured in our California facility with 100% US-sourced materials. Our automated production lines ensure consistent quality while meeting the scale demands of domestic drone deployment.
               </p>
 
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Our secret sauce isn't the motor design—it's the software-defined production line and the data exhaust.
+                Our secret sauce isn't just the component design—it's the software-defined production line and the data exhaust.
               </p>
 
               {/* Capability Grid */}
@@ -209,8 +209,8 @@ export default function Home() {
                   <div className="text-sm text-muted-foreground font-[var(--font-mono)]">Electrical Testing</div>
                 </Card>
                 <Card className="p-4 bg-card border-border">
-                  <div className="text-2xl font-bold text-primary mb-2 font-[var(--font-display)]">Vibration</div>
-                  <div className="text-sm text-muted-foreground font-[var(--font-mono)]">Bearing QA</div>
+                  <div className="text-2xl font-bold text-primary mb-2 font-[var(--font-display)]">Injection</div>
+                  <div className="text-sm text-muted-foreground font-[var(--font-mono)]">Molding + CNC</div>
                 </Card>
                 <Card className="p-4 bg-card border-border">
                   <div className="text-2xl font-bold text-primary mb-2 font-[var(--font-display)]">SPC</div>
@@ -235,24 +235,111 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-background border border-primary/30 mb-6">
               <Zap className="w-4 h-4 text-primary" />
               <span className="text-sm font-[var(--font-mono)] text-muted-foreground uppercase tracking-wider">
-                Product Strategy
+                Product Portfolio
               </span>
             </div>
 
             <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Priced for <span className="text-primary">Mass Deployment</span>
+              Complete <span className="text-primary">Component Stack</span>
             </h2>
 
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Defense reporting highlights the price mismatch: small motors that are $12–$25 from China can be $100–$225 for "truly made-in-America" equivalents. We hit volume + price bands that let OEMs survive.
+              From propulsion to structure, Anvil delivers the critical components that domestic drone manufacturers need. Priced for mass deployment, engineered for compliance.
             </p>
+          </div>
+
+          {/* Product Categories */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {/* Motors */}
+            <Card className="p-8 bg-background border-border hover:border-primary/50 transition-colors">
+              <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-6">
+                <Zap className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 font-[var(--font-display)]">Brushless Motors</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                High-efficiency brushless motors with automated winding and inline testing. Drop-in equivalents for popular foreign motors.
+              </p>
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>2204-2814 size range</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>400-2400 KV options</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>Full traceability</span>
+                </div>
+              </div>
+              <div className="tech-spec text-muted-foreground text-xs">
+                LEAD TIME: 2-4 weeks for custom specs
+              </div>
+            </Card>
+
+            {/* Propellers */}
+            <Card className="p-8 bg-background border-border hover:border-primary/50 transition-colors">
+              <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-6">
+                <Box className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 font-[var(--font-display)]">Propellers</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Precision-molded propellers optimized for efficiency and durability. Compatible with standard motor mounts and popular drone platforms.
+              </p>
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>5"-10" diameter range</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>Carbon fiber composite</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>Precision balanced</span>
+                </div>
+              </div>
+              <div className="tech-spec text-muted-foreground text-xs">
+                PRODUCTION: High-volume injection molding
+              </div>
+            </Card>
+
+            {/* Airframes */}
+            <Card className="p-8 bg-background border-border hover:border-primary/50 transition-colors">
+              <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-6">
+                <Layers className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 font-[var(--font-display)]">Airframes & Structures</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Lightweight carbon fiber airframes and structural components. Modular designs for rapid assembly and field repair.
+              </p>
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>Carbon fiber composite</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>Modular architecture</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>CNC + molded options</span>
+                </div>
+              </div>
+              <div className="tech-spec text-muted-foreground text-xs">
+                CAPABILITY: Custom frame design services
+              </div>
+            </Card>
           </div>
 
           {/* Product Image */}
           <div className="mb-16">
             <img 
               src={`${import.meta.env.BASE_URL}images/motor-array.png`} 
-              alt="Precision motor array"
+              alt="Precision component array"
               className="w-full h-auto max-w-4xl mx-auto"
             />
           </div>
@@ -265,7 +352,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold mb-4 font-[var(--font-display)]">Design-In Program</h3>
               <p className="text-muted-foreground mb-4 leading-relaxed">
-                Send us your current motor spec; we match + certify + deliver an equivalent with full documentation.
+                Send us your current component specs; we match + certify + deliver equivalents with full documentation.
               </p>
               <div className="tech-spec text-muted-foreground text-xs">
                 TURNAROUND: 2-4 weeks for custom matching
@@ -291,7 +378,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold mb-4 font-[var(--font-display)]">Developer Experience</h3>
               <p className="text-muted-foreground mb-4 leading-relaxed">
-                Fast samples, clear datasheets, drop-in CAD, reference ESC pairings. Build with confidence.
+                Fast samples, clear datasheets, drop-in CAD, reference pairings. Build with confidence.
               </p>
               <div className="tech-spec text-muted-foreground text-xs">
                 SAMPLE DELIVERY: 3-5 business days
@@ -316,7 +403,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Become the Default<br />
-              <span className="text-primary">Domestic Propulsion Layer</span>
+              <span className="text-primary">Domestic Component Supplier</span>
             </h2>
 
             <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
