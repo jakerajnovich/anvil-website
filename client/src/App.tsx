@@ -6,6 +6,8 @@ import { useHashLocation } from "wouter/use-hash-location";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import Specifications from "./pages/Specifications";
+import Catalog from "./pages/Catalog";
 
 // Use hash-based routing for GitHub Pages compatibility
 // This avoids issues with base paths and server-side routing
@@ -14,6 +16,8 @@ function AppRouter() {
     <Router hook={useHashLocation}>
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/specifications" component={Specifications} />
+        <Route path="/catalog" component={Catalog} />
         <Route path="/404" component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />

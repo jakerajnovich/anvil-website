@@ -63,8 +63,9 @@ export default function Home() {
                 size="lg" 
                 className="bg-primary text-primary-foreground hover:bg-primary/90 font-[var(--font-mono)] uppercase tracking-wider text-base px-8"
                 style={{ borderRadius: '4px' }}
+                onClick={() => window.location.hash = '#/catalog'}
               >
-                Request Design-In Kit
+                View Product Catalog
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button 
@@ -72,6 +73,7 @@ export default function Home() {
                 variant="outline" 
                 className="border-2 border-foreground/20 hover:border-primary hover:text-primary font-[var(--font-mono)] uppercase tracking-wider text-base px-8"
                 style={{ borderRadius: '4px' }}
+                onClick={() => window.location.hash = '#/specifications'}
               >
                 View Specifications
               </Button>
@@ -266,7 +268,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
-                  <span>400-2400 KV options</span>
+                  <span>400-2600 KV options</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
@@ -279,18 +281,18 @@ export default function Home() {
             </Card>
 
             {/* Propellers */}
-            <Card className="p-8 bg-background border-border hover:border-primary/50 transition-colors">
+            <Card className="p-8 bg-background border-primary/50 hover:border-primary transition-colors">
               <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-6">
                 <Box className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 font-[var(--font-display)]">Propellers</h3>
+              <h3 className="text-2xl font-bold mb-4 font-[var(--font-display)] text-primary">Propellers</h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Precision-molded propellers optimized for efficiency and durability. Compatible with standard motor mounts and popular drone platforms.
+                Precision-molded propellers from racing to reconnaissance. 5"-24" range covers FPV to long-endurance autonomous platforms.
               </p>
               <div className="space-y-2 mb-6">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
-                  <span>5"-10" diameter range</span>
+                  <span>5"-24" diameter range</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
@@ -298,7 +300,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
-                  <span>Precision balanced</span>
+                  <span>Recon series: 85-92% efficiency</span>
                 </div>
               </div>
               <div className="tech-spec text-muted-foreground text-xs">
@@ -318,7 +320,7 @@ export default function Home() {
               <div className="space-y-2 mb-6">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
-                  <span>Carbon fiber composite</span>
+                  <span>450mm-1200mm class</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
@@ -335,13 +337,84 @@ export default function Home() {
             </Card>
           </div>
 
-          {/* Product Image */}
+          {/* Propeller Array Image */}
           <div className="mb-16">
             <img 
-              src={`${import.meta.env.BASE_URL}images/motor-array.png`} 
-              alt="Precision component array"
+              src={`${import.meta.env.BASE_URL}images/propeller-array.png`} 
+              alt="Precision propeller lineup from racing to reconnaissance"
               className="w-full h-auto max-w-4xl mx-auto"
             />
+          </div>
+
+          {/* Reconnaissance Highlight */}
+          <Card className="p-12 bg-background border-primary/30 mb-16">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-card border border-primary/30 mb-6">
+                  <Box className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-[var(--font-mono)] text-muted-foreground uppercase tracking-wider">
+                    Featured: Reconnaissance Series
+                  </span>
+                </div>
+                <h3 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                  Long-Endurance <span className="text-primary">Propellers</span>
+                </h3>
+                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                  Our 12"-24" Reconnaissance Series propellers are engineered for autonomous long-duration missions. Optimized for cruise efficiency with low-noise profiles for covert operations.
+                </p>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <div className="text-2xl font-bold text-primary mb-1">85-92%</div>
+                    <div className="text-sm text-muted-foreground">Cruise Efficiency</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-primary mb-1">62-68 dB</div>
+                    <div className="text-sm text-muted-foreground">Noise Level @ 1m</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-primary mb-1">2-8 kg</div>
+                    <div className="text-sm text-muted-foreground">Thrust per Prop</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-primary mb-1">12-24"</div>
+                    <div className="text-sm text-muted-foreground">Size Range</div>
+                  </div>
+                </div>
+                <Button 
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 font-[var(--font-mono)] uppercase tracking-wider"
+                  style={{ borderRadius: '4px' }}
+                  onClick={() => window.location.hash = '#/catalog'}
+                >
+                  View Recon Propellers
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </div>
+              <div>
+                <img 
+                  src={`${import.meta.env.BASE_URL}images/propeller-closeup.png`} 
+                  alt="Reconnaissance propeller closeup"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          </Card>
+
+          {/* Airframe Images */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <div>
+              <img 
+                src={`${import.meta.env.BASE_URL}images/airframe-components.png`} 
+                alt="Modular airframe components"
+                className="w-full h-auto"
+              />
+            </div>
+            <div>
+              <img 
+                src={`${import.meta.env.BASE_URL}images/airframe-assembled.png`} 
+                alt="Assembled carbon fiber airframe"
+                className="w-full h-auto"
+              />
+            </div>
           </div>
 
           {/* Product Features Grid */}
@@ -384,15 +457,6 @@ export default function Home() {
                 SAMPLE DELIVERY: 3-5 business days
               </div>
             </Card>
-          </div>
-
-          {/* Motor Closeup */}
-          <div className="mt-16 max-w-2xl mx-auto">
-            <img 
-              src={`${import.meta.env.BASE_URL}images/motor-closeup.png`} 
-              alt="High-performance brushless motor closeup"
-              className="w-full h-auto"
-            />
           </div>
         </div>
       </section>
