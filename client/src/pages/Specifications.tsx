@@ -655,7 +655,7 @@ export default function Specifications() {
                 Manufacturing & <span className="text-primary">Quality Assurance</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                All components manufactured in California with 100% US-sourced materials. Every unit undergoes rigorous testing and ships with complete traceability documentation including material provenance, test results, and manufacturing data.
+                All components manufactured in Nevada with 100% US-sourced materials. Every unit undergoes rigorous testing and ships with complete traceability documentation including material provenance, test results, and manufacturing data.
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>

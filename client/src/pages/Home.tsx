@@ -52,7 +52,7 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-card border border-primary/30 mb-8">
               <Shield className="w-4 h-4 text-primary" />
               <span className="text-sm font-[var(--font-mono)] text-muted-foreground uppercase tracking-wider">
-                FCC/NDAA Compliant • Made in California, USA
+                FCC/NDAA Compliant • Made in Nevada, USA
               </span>
             </div>
 
@@ -62,7 +62,7 @@ export default function Home() {
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl font-[var(--font-body)] leading-relaxed">
-              California-manufactured motors, propellers, airframes, and structural components engineered for compliance. Ship FCC/NDAA-compliant drone systems without platform redesign.
+              Nevada-manufactured motors, propellers, airframes, and structural components engineered for compliance. Ship FCC/NDAA-compliant drone systems without platform redesign.
             </p>
 
             {/* Technical Specs Callout */}
@@ -100,7 +100,7 @@ export default function Home() {
             <div className="grid grid-cols-3 gap-6 mt-16 max-w-2xl">
               <div>
                 <div className="text-4xl md:text-5xl font-bold text-primary font-[var(--font-display)] mb-2">100%</div>
-                <div className="text-sm text-muted-foreground font-[var(--font-mono)] uppercase tracking-wider">Made in CA</div>
+                <div className="text-sm text-muted-foreground font-[var(--font-mono)] uppercase tracking-wider">Made in NV</div>
               </div>
               <div>
                 <div className="text-4xl md:text-5xl font-bold text-primary font-[var(--font-display)] mb-2">10K+</div>
@@ -145,7 +145,7 @@ export default function Home() {
                   <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-semibold text-foreground mb-1">100% US Manufacturing</div>
-                    <div className="text-muted-foreground">California-made with full component traceability and material provenance</div>
+                    <div className="text-muted-foreground">Nevada-made with full component traceability and material provenance</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -201,16 +201,16 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-card border border-primary/30 mb-6">
                 <Factory className="w-4 h-4 text-primary" />
                 <span className="text-sm font-[var(--font-mono)] text-muted-foreground uppercase tracking-wider">
-                  California Manufacturing
+                  Nevada Manufacturing
                 </span>
               </div>
 
               <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Built in <span className="text-primary">California</span>,<br />Scaled for America
+                Built in <span className="text-primary">Nevada</span>,<br />Scaled for America
               </h2>
 
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Every Anvil component is manufactured in our California facility with 100% US-sourced materials. Our automated production lines ensure consistent quality while meeting the scale demands of domestic drone deployment.
+                Every Anvil component is manufactured in our Nevada facility with 100% US-sourced materials. Our automated production lines ensure consistent quality while meeting the scale demands of domestic drone deployment.
               </p>
 
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
