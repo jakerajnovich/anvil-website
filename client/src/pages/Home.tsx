@@ -9,12 +9,29 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
-import { ArrowRight, CheckCircle2, Factory, FileCheck, Shield, Zap, Box, Layers } from "lucide-react";
+import ContactModal from "@/components/ContactModal";
+import { ArrowRight, CheckCircle2, Factory, FileCheck, Shield, Zap, Box, Layers, Plane } from "lucide-react";
+import { useState } from "react";
 
 export default function Home() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<{ name: string; sku: string } | null>(null);
+
+  const handleRequestInfo = (name: string, sku: string) => {
+    setSelectedProduct({ name, sku });
+    setModalOpen(true);
+  };
+
   return (
     <div className="min-h-screen">
       <Navigation />
+      
+      <ContactModal 
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        productName={selectedProduct?.name}
+        productSKU={selectedProduct?.sku}
+      />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-16">
@@ -246,12 +263,12 @@ export default function Home() {
             </h2>
 
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              From propulsion to structure, Anvil delivers the critical components that domestic drone manufacturers need. Priced for mass deployment, engineered for compliance.
+              From propulsion to structure, Anvil delivers the critical components that domestic drone manufacturers need. Engineered for compliance and scaled for mass deployment.
             </p>
           </div>
 
           {/* Product Categories */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-4 gap-8 mb-16">
             {/* Motors */}
             <Card className="p-8 bg-background border-border hover:border-primary/50 transition-colors">
               <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-6">
@@ -274,9 +291,6 @@ export default function Home() {
                   <CheckCircle2 className="w-4 h-4 text-primary" />
                   <span>Full traceability</span>
                 </div>
-              </div>
-              <div className="tech-spec text-muted-foreground text-xs">
-                LEAD TIME: 2-4 weeks for custom specs
               </div>
             </Card>
 
@@ -303,19 +317,16 @@ export default function Home() {
                   <span>Recon series: 85-92% efficiency</span>
                 </div>
               </div>
-              <div className="tech-spec text-muted-foreground text-xs">
-                PRODUCTION: High-volume injection molding
-              </div>
             </Card>
 
-            {/* Airframes */}
+            {/* Multirotor Airframes */}
             <Card className="p-8 bg-background border-border hover:border-primary/50 transition-colors">
               <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-6">
                 <Layers className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 font-[var(--font-display)]">Airframes & Structures</h3>
+              <h3 className="text-2xl font-bold mb-4 font-[var(--font-display)]">Multirotor Frames</h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Lightweight carbon fiber airframes and structural components. Modular designs for rapid assembly and field repair.
+                Lightweight carbon fiber airframes for multirotor platforms. Modular designs for rapid assembly and field repair.
               </p>
               <div className="space-y-2 mb-6">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -331,10 +342,142 @@ export default function Home() {
                   <span>CNC + molded options</span>
                 </div>
               </div>
-              <div className="tech-spec text-muted-foreground text-xs">
-                CAPABILITY: Custom frame design services
+            </Card>
+
+            {/* Fixed-Wing Airframes */}
+            <Card className="p-8 bg-background border-border hover:border-primary/50 transition-colors">
+              <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-6">
+                <Plane className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 font-[var(--font-display)]">Fixed-Wing Platforms</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Long-endurance fixed-wing airframes optimized for autonomous flight and sensor integration.
+              </p>
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>Tactical reconnaissance</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>Survey & mapping</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>VTOL hybrid options</span>
+                </div>
               </div>
             </Card>
+          </div>
+
+          {/* Fixed-Wing Showcase */}
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-background border border-primary/30 mb-6">
+                <Plane className="w-4 h-4 text-primary" />
+                <span className="text-sm font-[var(--font-mono)] text-muted-foreground uppercase tracking-wider">
+                  Fixed-Wing Platforms
+                </span>
+              </div>
+
+              <h3 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                Long-Endurance <span className="text-primary">Fixed-Wing</span>
+              </h3>
+
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Purpose-built fixed-wing airframes for extended mission profiles. Optimized for autonomous flight, sensor integration, and operational efficiency.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="p-6 bg-background border-border overflow-hidden">
+                <img 
+                  src={`${import.meta.env.BASE_URL}images/fixedwing-scout.png`} 
+                  alt="Scout tactical reconnaissance platform"
+                  className="w-full h-48 object-cover mb-4"
+                />
+                <h4 className="text-xl font-bold mb-2">Scout</h4>
+                <div className="text-xs font-[var(--font-mono)] text-primary uppercase tracking-wider mb-3">
+                  Tactical Reconnaissance
+                </div>
+                <p className="text-sm text-muted-foreground mb-4">
+                  1.5m wingspan, pusher propeller, modular sensor bay. Low acoustic signature for covert operations.
+                </p>
+                <Button 
+                  onClick={() => handleRequestInfo("Scout - Tactical Recon", "ANV-FW-SCOUT")}
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-[var(--font-mono)] uppercase tracking-wider text-xs"
+                  style={{ borderRadius: '4px' }}
+                >
+                  Request Info
+                </Button>
+              </Card>
+
+              <Card className="p-6 bg-background border-border overflow-hidden">
+                <img 
+                  src={`${import.meta.env.BASE_URL}images/fixedwing-sentinel.png`} 
+                  alt="Sentinel survey and mapping platform"
+                  className="w-full h-48 object-cover mb-4"
+                />
+                <h4 className="text-xl font-bold mb-2">Sentinel</h4>
+                <div className="text-xs font-[var(--font-mono)] text-primary uppercase tracking-wider mb-3">
+                  Survey & Mapping
+                </div>
+                <p className="text-sm text-muted-foreground mb-4">
+                  2.0m wingspan, high-wing design, transparent payload bay. Stable platform for precision mapping.
+                </p>
+                <Button 
+                  onClick={() => handleRequestInfo("Sentinel - Survey & Mapping", "ANV-FW-SENTINEL")}
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-[var(--font-mono)] uppercase tracking-wider text-xs"
+                  style={{ borderRadius: '4px' }}
+                >
+                  Request Info
+                </Button>
+              </Card>
+
+              <Card className="p-6 bg-background border-border overflow-hidden">
+                <img 
+                  src={`${import.meta.env.BASE_URL}images/fixedwing-forge.png`} 
+                  alt="Forge VTOL hybrid platform"
+                  className="w-full h-48 object-cover mb-4"
+                />
+                <h4 className="text-xl font-bold mb-2">Forge</h4>
+                <div className="text-xs font-[var(--font-mono)] text-primary uppercase tracking-wider mb-3">
+                  VTOL Hybrid
+                </div>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Quad VTOL + fixed-wing cruise. Vertical takeoff capability with long-range efficiency.
+                </p>
+                <Button 
+                  onClick={() => handleRequestInfo("Forge - VTOL Hybrid", "ANV-FW-FORGE")}
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-[var(--font-mono)] uppercase tracking-wider text-xs"
+                  style={{ borderRadius: '4px' }}
+                >
+                  Request Info
+                </Button>
+              </Card>
+
+              <Card className="p-6 bg-background border-border overflow-hidden">
+                <img 
+                  src={`${import.meta.env.BASE_URL}images/fixedwing-strike.png`} 
+                  alt="Strike high-speed transit platform"
+                  className="w-full h-48 object-cover mb-4"
+                />
+                <h4 className="text-xl font-bold mb-2">Strike</h4>
+                <div className="text-xs font-[var(--font-mono)] text-primary uppercase tracking-wider mb-3">
+                  High-Speed Transit
+                </div>
+                <p className="text-sm text-muted-foreground mb-4">
+                  1.0m swept-wing, aerodynamic design. Fast-response delivery and rapid patrol missions.
+                </p>
+                <Button 
+                  onClick={() => handleRequestInfo("Strike - High-Speed Transit", "ANV-FW-STRIKE")}
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-[var(--font-mono)] uppercase tracking-wider text-xs"
+                  style={{ borderRadius: '4px' }}
+                >
+                  Request Info
+                </Button>
+              </Card>
+            </div>
           </div>
 
           {/* Propeller Array Image */}
@@ -381,11 +524,11 @@ export default function Home() {
                   </div>
                 </div>
                 <Button 
+                  onClick={() => handleRequestInfo("Reconnaissance Propellers", "ANV-P-RECON")}
                   className="bg-primary text-primary-foreground hover:bg-primary/90 font-[var(--font-mono)] uppercase tracking-wider"
                   style={{ borderRadius: '4px' }}
-                  onClick={() => window.location.hash = '#/catalog'}
                 >
-                  View Recon Propellers
+                  Request Information
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>
@@ -427,9 +570,6 @@ export default function Home() {
               <p className="text-muted-foreground mb-4 leading-relaxed">
                 Send us your current component specs; we match + certify + deliver equivalents with full documentation.
               </p>
-              <div className="tech-spec text-muted-foreground text-xs">
-                TURNAROUND: 2-4 weeks for custom matching
-              </div>
             </Card>
 
             <Card className="p-8 bg-background border-border">
@@ -440,9 +580,6 @@ export default function Home() {
               <p className="text-muted-foreground mb-4 leading-relaxed">
                 Reserved capacity, fixed pricing bands, delivery SLAs. No surprises when supply shocks hit.
               </p>
-              <div className="tech-spec text-muted-foreground text-xs">
-                CONTRACT TERMS: 12-36 month agreements
-              </div>
             </Card>
 
             <Card className="p-8 bg-background border-border">
@@ -453,9 +590,6 @@ export default function Home() {
               <p className="text-muted-foreground mb-4 leading-relaxed">
                 Fast samples, clear datasheets, drop-in CAD, reference pairings. Build with confidence.
               </p>
-              <div className="tech-spec text-muted-foreground text-xs">
-                SAMPLE DELIVERY: 3-5 business days
-              </div>
             </Card>
           </div>
         </div>
@@ -477,6 +611,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Button 
                 size="lg" 
+                onClick={() => handleRequestInfo("Partnership Inquiry", "PARTNERSHIP")}
                 className="bg-primary text-primary-foreground hover:bg-primary/90 font-[var(--font-mono)] uppercase tracking-wider text-base px-8"
                 style={{ borderRadius: '4px' }}
               >
@@ -485,7 +620,8 @@ export default function Home() {
               </Button>
               <Button 
                 size="lg" 
-                variant="outline" 
+                variant="outline"
+                onClick={() => handleRequestInfo("Technical Brief Request", "TECH-BRIEF")}
                 className="border-2 border-foreground/20 hover:border-primary hover:text-primary font-[var(--font-mono)] uppercase tracking-wider text-base px-8"
                 style={{ borderRadius: '4px' }}
               >
@@ -531,7 +667,7 @@ export default function Home() {
             </a>
 
             <div className="text-sm text-muted-foreground font-[var(--font-mono)]">
-              © 2026 Anvil Propulsion by SectorFlow Inc. All rights reserved.
+              © 2026 Anvil Propulsion. All rights reserved.
             </div>
 
             <div className="flex gap-6">
